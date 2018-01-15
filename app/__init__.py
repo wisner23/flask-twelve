@@ -1,5 +1,5 @@
 from flask import Flask
-from app.client.views import client
+from app.client.endpoints import client
 
 app = Flask("flask-twelve")
 
