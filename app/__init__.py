@@ -1,9 +1,13 @@
 from flask import Flask
-from app.client.endpoints import client
 
 
 def create_app():
-    app = Flask("flask-twelve")
-    app.register_blueprint(client)
+    app = Flask(__name__.split(".")[0])
+    register_blueprints(app)
     return app
 
+
+def register_blueprints(app):
+
+    from app.client.endpoints import client
+    app.register_blueprint(client)
