@@ -1,7 +1,14 @@
 language: python
 python:
   - "3.6"
+sudo: required
+services:
+  - docker
 install:
   - pip install -r requirements.txt
 script:
   - py.test
+after_success:
+  - ./deploy.sh
+env:
+  - secure: "elvG36NxbsNyl2jnXNrePcbbtTz+dbUBV67WZV8d71EvzBJdACZLTI64REU0JfeS8Mf8ZGVTWzVCGqI4Cnahp6qphj6RhvPTyMCu00UkTnusZ2YtYRcwT/PAGIlUKkzqmVC4DFO/kjaMXw/UK8S9Tltu0pwHDs6+tl+FAtUvhCoRMvFV4BEv97wutpx6ZojzrB8YpLZRKTN9bDD6CzzSJ21dfVPO71w0WQ/Qo23R1XQnmJvCopkgNgxRn+IweFmautqFfmwDZZxJ++WddNUA7T59UE8jrfIISv4SdIWOiBq2MBvcC8rBL5vpxkPF4TDAkmgA0fRDr53K9I6OLo5+EHkN3Wz+ghTgQqWx7d2RqHaRp8fYc4Iov4blFobkfEfcdfUo90QQEyzpMIompZg6pxPkjjbO7Hc5XxtsToVT4cf7AWKMFjO81wUGdeqMe/fWRIsnEFCmJWA4Dckb3XQxsAUDH96Ip2hazrCvQ/Ym3+T2LYr8b2iSeqsNckB5+njdJy0CXT86vDc5fqjKMMfQPoAcSbv2+OMwnTT1K/mhM3ab8Ale7H0TbULpCp6Aw2d8O9D2gyoLGra1vtGhzsCAqGdpuEAn3A9JmhYnm7uPnoTRB36Qq0TMP2eeCVQg8pnQuq7afFofqX7PasYy5YIerLvTMf5n8I24APmFFonjZgk="
