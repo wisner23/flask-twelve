@@ -4,6 +4,8 @@ python:
 sudo: required
 services:
   - docker
+before_install:
+  - chmod +x ./deploy.sh
 install:
   - pip install -r requirements.txt
 script:
